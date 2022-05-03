@@ -14,9 +14,8 @@ protected:
 	string color;
 public:
 	string sort;
-	Animal(int age, string color) {
-		this->age = age;
-		this->color = color;
+	Animal(int age, string color) : age(age), color(color) {
+	
 
 	}
 	virtual void voice() = 0;
@@ -61,9 +60,6 @@ public:
 		cout << "Meow\n";
 	}
 };
-
-
-
 
 
 

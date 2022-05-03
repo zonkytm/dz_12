@@ -4,6 +4,8 @@
 
 int main() {
 	int size;
+	string choise;
+	cout << "Enter size:\n";
 	cin >> size;
 	vector<Animal*> zoo;
 	for (int i = 0; i < size; i++)
@@ -23,13 +25,15 @@ int main() {
 	}
 
 
-	auto newEnd = remove_if(zoo.begin(), zoo.end(), [](Animal* animal) {return animal->sort == "Dog";});
 
 	for (int i = 0; i < zoo.size(); i++)
 	{
 		cout << zoo[i]->sort << endl;
 	}
 	cout << endl << endl;
+	cout << "enter animal to kick out\n";
+	cin >> choise;
+	auto newEnd = remove_if(zoo.begin(), zoo.end(), [choise](Animal* animal) mutable {return animal->sort == choise; });
 	// Удаляем все элементы, следующие после
 	zoo.erase(newEnd, zoo.end());
 
